@@ -5,7 +5,7 @@ import {
     FaHtml5, FaCss3Alt, FaBootstrap, FaJs, FaJsSquare, 
     FaWind, FaReact, FaJava, FaLeaf, FaDatabase, 
     FaLifeRing, FaPhp, FaLaravel, FaPencilRuler, 
-    FaFigma, FaServer, FaCat, FaVuejs 
+    FaFigma, FaServer, FaCat, 
 } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiFirebase } from 'react-icons/si';
 
