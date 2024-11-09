@@ -9,7 +9,7 @@ import { Rocket } from './3d/Rocket'
 
 export function GetInTouch() {
     return (
-        <section className="py-24">
+        <section className="py-10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

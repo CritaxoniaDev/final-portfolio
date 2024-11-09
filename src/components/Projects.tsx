@@ -80,7 +80,7 @@ const projects = [
 
 export function Projects() {
     return (
-        <section className="py-24" id="projects">
+        <section className="py-10" id="project">
             <div className="space-y-8">
                 <h2 className="text-2xl font-bold text-gray-800 dark:text-white tracking-tighter transition-colors duration-300 mb-8">
                     Featured Projects

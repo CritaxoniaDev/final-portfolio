@@ -31,7 +31,6 @@ export function Skills() {
         { name: 'Apache', icon: FaServer, color: 'text-red-500', category: 'backend' },
         { name: 'Tomcat', icon: FaCat, color: 'text-yellow-600', category: 'backend' },
         { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500', category: 'frontend' },
-        { name: 'Vue', icon: FaVuejs, color: 'text-green-600', category: 'frontend' },
         { name: 'Firebase', icon: SiFirebase, color: 'text-yellow-500', category: 'backend' },
     ];
 
