@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Moon, Sun, User, GraduationCap, Code, FolderGit2, Mail, Home } from 'lucide-react';
 
 export function Dock() {
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(true);
     const [activeSection, setActiveSection] = useState('hero');
 
     useEffect(() => {
