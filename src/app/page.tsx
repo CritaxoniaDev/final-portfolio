@@ -6,6 +6,7 @@ import { Projects } from "@/components/Projects";
 import { GetInTouch } from "@/components/GetInTouch";
 import { Dock } from "@/components/Dock";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { Experience } from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -21,7 +22,12 @@ export default function Home() {
           <About />
         </section>
         <div className="my-16 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent" />
-        
+
+        <section id="experience" className="scroll-mt-16">
+          <Experience />
+        </section>
+        <div className="my-16 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent" />
+
         <section id="education" className="scroll-mt-16">
           <Education />
         </section>
