@@ -5,6 +5,15 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
     {
+        title: "Conversational Marketing AI App",
+        description: "An enterprise-grade AI-powered conversational marketing platform that enables businesses to engage with customers through intelligent chatbots and automated conversations.",
+        technologies: ["Laravel", "TinyMCE API", "PHP", "Blade", "JavaScript", "MySQL", "OpenAI API", "Microsoft Auth API", "CSS"],
+        image: "/images/CMA.png", // Add your image here
+        githubLink: "https://github.com/YourUsername/ConversationalAI", // Update with actual link
+        objective: "Developed an industry-level AI conversation platform that leverages natural language processing to automate customer interactions and improve lead generation.",
+        isIndustry: true // Add this flag to mark it as an industry project
+    },
+    {
         title: "North Sussex Judo",
         description: "A Java terminal console program to compute monthly training fees for athletes, simplifying fee calculations and managing financial commitments.",
         technologies: ["Java"],
@@ -89,8 +98,17 @@ export function Projects() {
                     {projects.map((project, index) => (
                         <Card
                             key={index}
-                            className="group hover:shadow-xl dark:hover:shadow-primary/5 transition-all duration-300 overflow-hidden border-muted/20 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex flex-col h-full"
+                            className={`group hover:shadow-xl dark:hover:shadow-primary/5 transition-all duration-300 overflow-hidden border-muted/20 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex flex-col h-full ${
+                                project.isIndustry ? 'md:col-span-2 border-2 border-primary/50' : ''
+                            }`}
                         >
+                            {project.isIndustry && (
+                                <div className="absolute top-4 right-4 z-10">
+                                    <Badge className="bg-primary text-primary-foreground hover:bg-primary/90">
+                                        Industry Project
+                                    </Badge>
+                                </div>
+                            )}
                             <CardHeader className="p-0">
                                 <div className="overflow-hidden">
                                     <img
