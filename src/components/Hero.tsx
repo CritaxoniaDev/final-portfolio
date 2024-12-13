@@ -41,13 +41,24 @@ export function Hero() {
                         <span className="text-green-500">"2nd Year Student"</span>;
                     </motion.p>
                     <motion.h1
-                        initial={{ y: -50 }}
-                        animate={{ y: 0 }}
-                        transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
-                        className="text-4xl md:text-6xl font-bold tracking-tighter"
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                            delay: 0.2,
+                            type: 'spring',
+                            stiffness: 120,
+                            damping: 15
+                        }}
+                        className="text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-r from-purple-600 via-blue-500 to-teal-500 text-transparent bg-clip-text relative"
+                        whileHover={{
+                            scale: 1.02,
+                            transition: { duration: 0.2 }
+                        }}
                     >
                         Gian Raphael Alcantara
+                        <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 via-blue-500 to-teal-500 transform scale-x-0 transition-transform group-hover:scale-x-100" />
                     </motion.h1>
+
 
                     <motion.img
                         src="/resources/hello-person.png"
@@ -62,7 +73,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-lg md:text-xl text-gray-600 font-inter tracking-tighter"
+                    className="text-lg md:text-xl text-gray-00 font-inter tracking-tighter"
                 >
                     BSIT - Software Engineering Student at First City Providential College. and an aspiring Full-Stack Developer based in Bulacan, Philippines.
                 </motion.p>

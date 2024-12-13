@@ -52,7 +52,7 @@ export function Dock() {
     ];
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 flex justify-center pb-8">
+        <div className="fixed bottom-0 left-0 right-0 flex justify-center pb-8 z-[9999]">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
