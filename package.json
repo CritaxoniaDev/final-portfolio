@@ -29,7 +29,8 @@
     "swiper": "^11.1.14",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.170.0"
+    "three": "^0.170.0",
+    "troika-three-text": "^0.52.2"
   },
   "devDependencies": {
     "@types/node": "^20",

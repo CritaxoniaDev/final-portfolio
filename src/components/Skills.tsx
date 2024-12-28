@@ -1,11 +1,11 @@
 'use client'
 
 import { motion } from "framer-motion";
-import { 
-    FaHtml5, FaCss3Alt, FaBootstrap, FaJs, FaJsSquare, 
-    FaWind, FaReact, FaJava, FaLeaf, FaDatabase, 
-    FaLifeRing, FaPhp, FaLaravel, FaPencilRuler, 
-    FaFigma, FaServer, FaCat, 
+import {
+    FaHtml5, FaCss3Alt, FaBootstrap, FaJs, FaJsSquare,
+    FaWind, FaReact, FaJava, FaLeaf, FaDatabase,
+    FaLifeRing, FaPhp, FaLaravel, FaPencilRuler,
+    FaFigma, FaServer, FaCat,
 } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiFirebase } from 'react-icons/si';
 
@@ -71,10 +71,10 @@ export function Skills() {
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+                                        className="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/30 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700/40 transition-colors duration-300"
                                     >
-                                        <Icon className={`w-8 h-8 ${skill.color} opacity-80 hover:opacity-100 transition-opacity duration-300`} />
-                                        <span className="mt-2 text-sm text-gray-600 dark:text-gray-400 tracking-tighter">
+                                        <Icon className={`w-8 h-8 ${skill.color} opacity-80 dark:opacity-90 hover:opacity-100 transition-opacity duration-300`} />
+                                        <span className="mt-2 text-sm text-gray-600 dark:text-gray-200 tracking-tighter">
                                             {skill.name}
                                         </span>
                                     </motion.div>
