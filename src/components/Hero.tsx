@@ -25,7 +25,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col justify-center items-center pt-32"
+            className="flex flex-col justify-center items-center pt-36"
         >
             <div className="text-center space-y-4 pb-8 relative z-10">
                 <div className="relative">
@@ -33,12 +33,15 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="text-left pl-4 text-lg md:text-xl font-mono tracking-tighter bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500 text-transparent bg-clip-text"
+                        className="text-left pl-4 text-lg md:text-xl font-mono tracking-tight relative group"
                     >
-                        <span className="text-gray-500">String</span>{" "}
-                        <span className="text-blue-500">status</span>{" "}
-                        <span className="text-gray-500">=</span>{" "}
-                        <span className="text-green-500">"2nd Year Student"</span>;
+                        <span className="absolute -left-2 text-gray-400 group-hover:text-gray-500 transition-colors duration-300">1</span>
+                        <span className="text-pink-500 dark:text-pink-400">const</span>{" "}
+                        <span className="text-blue-500 dark:text-blue-400">status</span>{" "}
+                        <span className="text-gray-400 dark:text-gray-500">=</span>{" "}
+                        <span className="text-amber-500 dark:text-amber-400">'2nd Year Student'</span>
+                        <span className="text-gray-400 dark:text-gray-500">;</span>
+                        <span className="absolute -left-2 top-0 h-full w-1 bg-primary/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300" />
                     </motion.p>
                     <motion.h1
                         initial={{ y: -50, opacity: 0 }}
@@ -49,16 +52,18 @@ export function Hero() {
                             stiffness: 120,
                             damping: 15
                         }}
-                        className="text-4xl md:text-6xl font-bold tracking-tighter bg-gradient-to-r from-purple-600 via-blue-500 to-teal-500 text-transparent bg-clip-text relative"
+                        className="text-4xl md:text-6xl font-bold tracking-tighter text-gray-900 dark:text-white relative border-b-4 border-gray-900 dark:border-white pb-2"
+                        style={{
+                            textShadow: '2px 2px 0 #000, -2px -2px 0 #fff',
+                            WebkitTextStroke: '1px #000'
+                        }}
                         whileHover={{
                             scale: 1.02,
                             transition: { duration: 0.2 }
                         }}
                     >
                         Gian Raphael Alcantara
-                        <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 via-blue-500 to-teal-500 transform scale-x-0 transition-transform group-hover:scale-x-100" />
                     </motion.h1>
-
 
                     <motion.img
                         src="/resources/hello-person.png"

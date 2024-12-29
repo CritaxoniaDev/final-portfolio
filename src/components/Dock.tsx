@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { Moon, Sun, User, GraduationCap, Code, FolderGit2, Mail, Home } from 'lucide-react';
+import { Moon, Sun, User, GraduationCap, Code, FolderGit2, Mail, Home, Briefcase } from 'lucide-react';
 
 export function Dock() {
     const [isDark, setIsDark] = useState(true);
@@ -45,6 +45,7 @@ export function Dock() {
     const navItems = [
         { icon: Home, id: 'hero', label: 'Home' },
         { icon: User, id: 'about', label: 'About' },
+        { icon: Briefcase, id: 'experience', label: 'Experience' },
         { icon: GraduationCap, id: 'education', label: 'Education' },
         { icon: Code, id: 'skills', label: 'Skills' },
         { icon: FolderGit2, id: 'project', label: 'Projects' },
