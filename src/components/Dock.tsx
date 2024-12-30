@@ -48,7 +48,7 @@ export function Dock() {
         { icon: Briefcase, id: 'experience', label: 'Experience' },
         { icon: GraduationCap, id: 'education', label: 'Education' },
         { icon: Code, id: 'skills', label: 'Skills' },
-        { icon: FolderGit2, id: 'project', label: 'Projects' },
+        { icon: FolderGit2, id: 'projects', label: 'Projects' },
         { icon: Mail, id: 'contact', label: 'Contact' },
     ];
 

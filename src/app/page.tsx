@@ -80,7 +80,7 @@ export default function Home() {
         </section>
         <div className="my-16 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent" />
 
-        <section id="project" className="scroll-mt-16">
+        <section id="projects" className="scroll-mt-16">
           <Projects />
         </section>
         <div className="my-16 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent" />

@@ -67,10 +67,10 @@ export function Experience() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 * index }}
-                            className="relative flex gap-6 p-6 rounded-xl bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition-all duration-300"
+                            className="relative flex gap-6 p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 hover:shadow-xl hover:scale-[1.02] transition-all duration-500 border border-gray-200 dark:border-gray-700"
                         >
                             <div className="flex-shrink-0">
-                                <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white dark:bg-gray-800 p-2">
+                                <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-white dark:bg-gray-800 p-2 shadow-lg transform hover:rotate-3 transition-transform duration-300">
                                     <Image
                                         src={experience.logo}
                                         alt={`${experience.company} logo`}
@@ -81,29 +81,29 @@ export function Experience() {
                             </div>
 
                             <div className="flex-grow">
-                                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
                                     {experience.title}
                                 </h3>
                                 <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                                    {experience.company} • {experience.period}
+                                    {experience.company} • <span className="text-blue-500 dark:text-blue-400">{experience.period}</span>
                                 </p>
 
-                                <ul className="mt-4 space-y-2">
+                                <ul className="mt-4 space-y-3">
                                     {experience.description.map((item, i) => (
-                                        <li key={i} className="flex items-start">
-                                            <span className="mr-2 mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-                                            <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                                        <li key={i} className="flex items-start group">
+                                            <span className="mr-2 mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500 dark:bg-blue-400 group-hover:scale-125 transition-transform duration-300"></span>
+                                            <span className="text-gray-600 dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-white transition-colors duration-300">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
 
-                                <div className="mt-4 flex flex-wrap gap-2">
+                                <div className="mt-6 flex flex-wrap gap-2">
                                     {experience.skills.map((skill, i) => (
                                         <span
                                             key={i}
-                                            className="px-3 py-1 text-sm rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center gap-2"
+                                            className="px-4 py-2 text-sm rounded-xl bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 flex items-center gap-2 hover:shadow-md hover:scale-105 transition-all duration-300 border border-gray-200 dark:border-gray-600"
                                         >
-                                            <skill.icon className="w-4 h-4" />
+                                            <skill.icon className="w-4 h-4 text-blue-500 dark:text-blue-400" />
                                             {skill.name}
                                         </span>
                                     ))}

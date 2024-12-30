@@ -124,27 +124,47 @@ export function Hero() {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.6 }}
-                    className="flex justify-center space-x-6 mt-8"
+                    className="flex justify-center space-x-8 mt-12"
                 >
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="relative group"
+                    >
+                        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-xy"></div>
                         <Button
                             variant="default"
                             size="lg"
-                            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 flex items-center gap-2"
+                            className="relative px-8 py-6 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-xl hover:shadow-purple-500/50 flex items-center gap-3 rounded-lg transition-all duration-500"
                         >
-                            <FaPlay className="w-4 h-4" />
-                            Video Introduction
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                            >
+                                <FaPlay className="w-5 h-5" />
+                            </motion.div>
+                            <span className="font-semibold tracking-wide">Video Introduction</span>
                         </Button>
                     </motion.div>
 
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="relative group"
+                    >
+                        <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-xy"></div>
                         <Button
                             variant="default"
                             size="lg"
-                            className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:opacity-90 flex items-center gap-2"
+                            className="relative px-8 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-xl hover:shadow-emerald-500/50 flex items-center gap-3 rounded-lg transition-all duration-500"
                         >
-                            <HiDownload className="w-4 h-4" />
-                            Download CV
+                            <motion.div
+                                whileHover={{ y: -3 }}
+                                transition={{ repeat: Infinity, repeatType: "reverse", duration: 0.6 }}
+                            >
+                                <HiDownload className="w-5 h-5" />
+                            </motion.div>
+                            <span className="font-semibold tracking-wide">Download CV</span>
                         </Button>
                     </motion.div>
                 </motion.div>
