@@ -34,7 +34,7 @@ const projects = [
     {
         title: "Enomy Finances",
         description: "A computer system for personal finance services, serving both staff and clients.",
-        technologies: ["JSP", "CSS", "JavaScript", "Bootstrap", "MySQL", "Java (Spring Framework)"],
+        technologies: ["JSP", "CSS", "JavaScript", "Tailwind CSS", "MySQL", "Java (Spring Framework)"],
         image: "../images/project-4.png",
         githubLink: "https://github.com/CritaxoniaDev/Enomy-Finances",
         objective: "Design and implement a new computer system for Enomy-Finances, including core system processes and software designs for client presentation."
