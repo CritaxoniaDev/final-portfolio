@@ -11,7 +11,6 @@ const projects = [
         description: "An enterprise-grade AI-powered conversational marketing platform that enables businesses to engage with customers through intelligent chatbots and automated conversations.",
         technologies: ["Laravel", "TinyMCE API", "PHP", "Blade", "JavaScript", "MySQL", "OpenAI API", "Microsoft Auth API", "CSS"],
         image: "/images/CMA.png", // Add your image here
-        githubLink: "https://github.com/YourUsername/ConversationalAI", // Update with actual link
         objective: "Developed an industry-level AI conversation platform that leverages natural language processing to automate customer interactions and improve lead generation.",
         isIndustry: true // Add this flag to mark it as an industry project
     },
@@ -165,25 +164,6 @@ export function Projects() {
                                         GitHub
                                     </a>
                                 </Button>
-
-                                {project.githubLink.includes('netlify') || project.githubLink.includes('vercel') ? (
-                                    <Button
-                                        variant="outline"
-                                        size="sm"
-                                        className="group/btn hover:border-primary/50 flex-1"
-                                        asChild
-                                    >
-                                        <a
-                                            href={project.githubLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center justify-center"
-                                        >
-                                            <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:text-primary transition-colors duration-300" />
-                                            Live Demo
-                                        </a>
-                                    </Button>
-                                ) : null}
                             </CardFooter>
                         </Card>
                     ))}
