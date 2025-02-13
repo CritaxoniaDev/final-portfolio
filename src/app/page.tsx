@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from "react";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Education } from "@/components/Education";
@@ -10,18 +11,34 @@ import { Dock } from "@/components/Dock";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Experience } from "@/components/Experience";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useTheme } from "next-themes";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 
 export default function Home() {
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
-  const { theme } = useTheme();
+
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedMode = localStorage.getItem('darkMode');
+      return savedMode !== null ? JSON.parse(savedMode) : true;
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const darkMode = localStorage.getItem('darkMode');
+      setIsDark(darkMode === 'true');
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 font-sans antialiased transition-colors duration-300 scroll-smooth relative overflow-hidden">
-      {theme === 'light' ? (
+      {!isDark ? (
         <div className="fixed inset-0 pointer-events-none overflow-hidden bg-[#FFFFFF]">
           {/* Main Grid */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000010_1px,transparent_1px),linear-gradient(to_bottom,#00000010_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] animate-grid-fade">
