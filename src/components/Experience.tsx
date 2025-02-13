@@ -67,7 +67,7 @@ export function Experience() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 * index }}
-                            className="relative flex gap-6 p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 hover:shadow-xl hover:scale-[1.02] transition-all duration-500 border border-gray-200 dark:border-gray-700"
+                            className="relative flex gap-6 p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 hover:shadow-xl hover:scale-[1.02] transition-all duration-500 border border-gray-200 dark:border-gray-700"
                         >
                             <div className="flex-shrink-0">
                                 <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-white dark:bg-gray-800 p-2 shadow-lg transform hover:rotate-3 transition-transform duration-300">

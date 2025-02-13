@@ -57,10 +57,6 @@ export function Hero() {
                             textShadow: '2px 2px 0 #000, -2px -2px 0 #fff',
                             WebkitTextStroke: '1px #000'
                         }}
-                        whileHover={{
-                            scale: 1.02,
-                            transition: { duration: 0.2 }
-                        }}
                     >
                         Gian Raphael Alcantara
                     </motion.h1>
@@ -131,11 +127,10 @@ export function Hero() {
                         whileTap={{ scale: 0.95 }}
                         className="relative group"
                     >
-                        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-xy"></div>
                         <Button
                             variant="default"
                             size="lg"
-                            className="relative px-8 py-6 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-xl hover:shadow-purple-500/50 flex items-center gap-3 rounded-lg transition-all duration-500"
+                            className="relative px-8 py-6 border-2 border-purple-600 bg-transparent hover:bg-purple-600/10 text-purple-600 flex items-center gap-3 transition-all duration-500 [sketch-shadow:_2px_2px_0_0_#7c3aed] hover:[sketch-shadow:_4px_4px_0_0_#7c3aed]"
                         >
                             <motion.div
                                 animate={{ rotate: 360 }}
@@ -152,11 +147,10 @@ export function Hero() {
                         whileTap={{ scale: 0.95 }}
                         className="relative group"
                     >
-                        <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-xy"></div>
                         <Button
                             variant="default"
                             size="lg"
-                            className="relative px-8 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-xl hover:shadow-emerald-500/50 flex items-center gap-3 rounded-lg transition-all duration-500"
+                            className="relative px-8 py-6 border-2 border-emerald-600 bg-transparent hover:bg-emerald-600/10 text-emerald-600 flex items-center gap-3 transition-all duration-500 [sketch-shadow:_2px_2px_0_0_#059669] hover:[sketch-shadow:_4px_4px_0_0_#059669]"
                         >
                             <motion.div
                                 whileHover={{ y: -3 }}

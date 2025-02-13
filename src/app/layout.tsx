@@ -1,17 +1,40 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from 'geist/font/sans'
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
 export const metadata: Metadata = {
-  title: "Gian Alcantara",
-  description: "A showcase of my work and skills",
+  title: "Gian Alcantara | Full Stack Developer",
+  description: "A showcase of my work and skills as a Full Stack Developer. Explore my projects, technical expertise, and professional journey.",
+  keywords: ["Full Stack Developer", "Web Development", "Software Engineer", "Gian Alcantara", "Portfolio"],
+  authors: [{ name: "Gian Alcantara" }],
+  creator: "Gian Alcantara",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://gianalcantara.dev",
+    title: "Gian Alcantara | Full Stack Developer",
+    description: "Full Stack Developer specializing in modern web technologies",
+    siteName: "Gian Alcantara Portfolio",
+    images: [{
+      url: "/assets/og-image.png",
+      width: 1200,
+      height: 630,
+      alt: "Gian Alcantara - Full Stack Developer"
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gian Alcantara | Full Stack Developer",
+    description: "Full Stack Developer specializing in modern web technologies",
+    images: ["/assets/og-image.png"],
+  },
   icons: {
-    icon: '/assets/favicon.ico', // Replace with your favicon filename
+    icon: '/assets/favicon.ico',
+    apple: '/assets/apple-touch-icon.png',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -22,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${GeistSans.className} antialiased tracking-tighter`}>
         {children}
       </body>
     </html>
