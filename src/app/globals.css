@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  transition: background-color var(--transition-duration) ease,
+              border-color var(--transition-duration) ease,
+              color var(--transition-duration) ease,
+              fill var(--transition-duration) ease,
+              stroke var(--transition-duration) ease;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -10,6 +18,7 @@
 
 @layer base {
   :root {
+    --transition-duration: 400ms;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;

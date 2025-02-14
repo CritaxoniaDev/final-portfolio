@@ -71,7 +71,7 @@ export function Skills() {
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/30 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700/40 transition-colors duration-300"
+                                        className="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-800/30 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-700/40 transition-colors duration-300"
                                     >
                                         <Icon className={`w-8 h-8 ${skill.color} opacity-80 dark:opacity-90 hover:opacity-100 transition-opacity duration-300`} />
                                         <span className="mt-2 text-sm text-gray-600 dark:text-gray-200 tracking-tighter">

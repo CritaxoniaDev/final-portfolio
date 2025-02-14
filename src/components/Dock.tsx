@@ -5,17 +5,32 @@ import { useState, useEffect } from 'react';
 import { Moon, Sun, User, GraduationCap, Code, FolderGit2, Mail, Home, Briefcase } from 'lucide-react';
 
 export function Dock() {
+    const [mounted, setMounted] = useState(false);
     const [isDark, setIsDark] = useState(true);
     const [activeSection, setActiveSection] = useState('hero');
 
     useEffect(() => {
-        if (isDark) {
+        setMounted(true);
+        const theme = localStorage.getItem('theme') ?? 'dark';
+        setIsDark(theme === 'dark');
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = !isDark;
+        setIsDark(newTheme);
+        localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+        
+        if (newTheme) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
-    }, [isDark]);
 
+        const event = new CustomEvent('themeToggle', { detail: newTheme });
+        document.dispatchEvent(event);
+    };
+
+    // Your existing intersection observer code
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -52,7 +67,7 @@ export function Dock() {
         { icon: Mail, id: 'contact', label: 'Contact' },
     ];
 
-    return (
+    return mounted ? (
         <div className="fixed bottom-0 left-0 right-0 flex justify-center pb-8 z-[9999]">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -94,7 +109,7 @@ export function Dock() {
                     <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => setIsDark(!isDark)}
+                        onClick={toggleTheme}
                         className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group relative"
                     >
                         {isDark ? (
@@ -109,5 +124,5 @@ export function Dock() {
                 </div>
             </motion.div>
         </div>
-    );
+    ) : null;
 }

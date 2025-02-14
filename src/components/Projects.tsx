@@ -95,13 +95,12 @@ export function Projects() {
                 <h2 className="text-2xl font-bold text-gray-800 dark:text-white tracking-tighter transition-colors duration-300 mb-8">
                     Featured Projects
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 [&>*:last-child]:md:col-span-2 [&>*:last-child]:md:max-w-[50%] [&>*:last-child]:md:mx-auto">
                     {projects.map((project, index) => (
                         <Card
                             key={index}
-                            className={`group hover:shadow-xl dark:hover:shadow-primary/5 transition-all duration-300 overflow-hidden border-muted/20 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex flex-col h-full ${
-                                project.isIndustry ? 'md:col-span-2 border-2 border-primary/50' : ''
-                            }`}
+                            className={`group hover:shadow-xl dark:hover:shadow-primary/5 transition-all duration-300 overflow-hidden border-2 border-dashed border-gray-200 dark:border-gray-800 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex flex-col h-full ${project.isIndustry ? 'md:col-span-2 border-primary/50' : ''
+                                }`}
                         >
                             {project.isIndustry && (
                                 <div className="absolute top-4 right-4 z-10">
@@ -135,10 +134,10 @@ export function Projects() {
                                         <Badge
                                             key={techIndex}
                                             variant="secondary"
-                                            className="bg-gray-900 text-white hover:bg-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-300 font-medium px-3 py-1 rounded-full shadow-sm border border-gray-700/20"
+                                            className="text-xs bg-gray-800/70 text-gray-100 hover:bg-gray-700 dark:bg-gray-700/50 dark:hover:bg-gray-600/50 transition-all duration-300 font-medium px-2.5 py-0.5 rounded-sm shadow-sm border border-gray-600/10 backdrop-blur-sm transform hover:scale-105"
                                         >
                                             {tech}
-                                        </Badge>    
+                                        </Badge>
                                     ))}
                                 </div>
 
