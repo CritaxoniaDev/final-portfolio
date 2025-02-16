@@ -23,8 +23,9 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true);
-    const theme = localStorage.getItem('theme') ?? 'dark';
-    setIsDark(theme === 'dark');
+    localStorage.setItem('theme', 'dark');
+    document.documentElement.classList.add('dark');
+    setIsDark(true);
 
     const handleThemeChange = (e: CustomEvent<boolean>) => {
       setIsDark(e.detail);
@@ -43,7 +44,7 @@ export default function Home() {
     <main className="min-h-screen bg-white dark:bg-gray-950 font-sans antialiased transition-all duration-500 ease-in-out scroll-smooth relative overflow-hidden">
       <AnimatePresence mode="wait">
         {!isDark ? (
-          <motion.div 
+          <motion.div
             key="light"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

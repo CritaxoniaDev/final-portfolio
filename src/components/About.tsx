@@ -49,7 +49,7 @@ export function About() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-gray-600 dark:text-white space-y-4 tracking-tighter text-justify transition-colors duration-300"
+                    className="text-black dark:text-white space-y-4 tracking-tighter text-justify transition-colors duration-300"
                 >
                     <p>
                         My name is Gian Raphael Alcantara, I am {timeAlive} old, a dedicated software engineering student at First City Providential College. My mission revolves around mastering programming languages, algorithms, and software development methodologies.

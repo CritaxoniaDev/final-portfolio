@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://gianalcantara.dev",
+    url: "https://gianraphael.vercel.app",
     title: "Gian Alcantara | Full Stack Developer",
     description: "Full Stack Developer specializing in modern web technologies",
     siteName: "Gian Alcantara Portfolio",

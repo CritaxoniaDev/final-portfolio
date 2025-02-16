@@ -2,10 +2,21 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
 
-const projects = [
+export interface Project {
+    title: string;
+    description: string;
+    technologies: string[];
+    image: string;
+    objective: string;
+    isIndustry?: boolean;
+    githubLink?: string;
+}
+
+export const projects: Project[] = [
     {
         title: "Conversational Marketing AI App",
         description: "An enterprise-grade AI-powered conversational marketing platform that enables businesses to engage with customers through intelligent chatbots and automated conversations.",
@@ -18,7 +29,7 @@ const projects = [
         title: "North Sussex Judo",
         description: "A Java terminal console program to compute monthly training fees for athletes, simplifying fee calculations and managing financial commitments.",
         technologies: ["Java"],
-        image: "../images/project-1.png",
+        image: "/images/project-1.png",
         githubLink: "https://github.com/CritaxoniaDev/North-Sussex-Judo",
         objective: "Build a software program that calculates monthly expenses for judo athletes, including training plans, competition entries, and private coaching hours."
     },
@@ -26,7 +37,7 @@ const projects = [
         title: "DoBu Martial Arts",
         description: "A website for a martial arts gym offering various classes, fitness training, and self-defense courses.",
         technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Tailwind CSS"],
-        image: "../images/project-2.png",
+        image: "/images/project-2.png",
         githubLink: "https://github.com/CritaxoniaDev/DobuMartialArts",
         objective: "Design and create an engaging website for DoBu Martial Arts, showcasing the gym's offerings and allowing users to manage their membership."
     },
@@ -34,7 +45,7 @@ const projects = [
         title: "Enomy Finances",
         description: "A computer system for personal finance services, serving both staff and clients.",
         technologies: ["JSP", "CSS", "JavaScript", "Tailwind CSS", "MySQL", "Java (Spring Framework)"],
-        image: "../images/project-4.png",
+        image: "/images/project-4.png",
         githubLink: "https://github.com/CritaxoniaDev/Enomy-Finances",
         objective: "Design and implement a new computer system for Enomy-Finances, including core system processes and software designs for client presentation."
     },
@@ -42,7 +53,7 @@ const projects = [
         title: "ABC Cars Portal",
         description: "A Used Car Sales portal with functionalities for Users and Administrators.",
         technologies: ["JSP", "CSS", "Bootstrap", "JavaScript", "MySQL", "Java (Spring Framework)", "Spring Boot"],
-        image: "../images/project-5.png",
+        image: "/images/project-5.png",
         githubLink: "https://github.com/CritaxoniaDev/ABCCarsPortal",
         objective: "Create a comprehensive online platform facilitating the buying and selling of used cars, with distinct functionalities for users and administrators."
     },
@@ -50,7 +61,7 @@ const projects = [
         title: "Meals on Wheels",
         description: "A software application for MerryMeal, a charitable organization delivering meals to qualified adults.",
         technologies: ["PHP", "Laravel", "Blade", "MySQL", "CSS", "JavaScript", "Tailwind", "Stripe API"],
-        image: "../images/project-6.png",
+        image: "/images/project-6.png",
         githubLink: "https://github.com/CritaxoniaDev/Mealsonwheels",
         objective: "Design and develop a comprehensive software application for MerryMeal to streamline various processes including registration, meal planning, and delivery management."
     },
@@ -58,7 +69,7 @@ const projects = [
         title: "Weather-App",
         description: "A website that can search for the weather of a specific location using the Open Weather API.",
         technologies: ["Vanilla", "Open Weather API", "Tailwind", "CSS", "JavaScript"],
-        image: "../images/project-9.png",
+        image: "/images/project-9.png",
         githubLink: "https://weather-finder-crit.netlify.app/",
         objective: "Just to make a website for a Weather Finder."
     },
@@ -66,7 +77,7 @@ const projects = [
         title: "Edu-Insight",
         description: "A website that is a learning platform that can access and knowledge about the different skills of software engineering course.",
         technologies: ["Nextjs", "Typescript", "Tailwind", "CSS", "JavaScript"],
-        image: "../images/project-10.png",
+        image: "/images/project-10.png",
         githubLink: "https://edu-insight.vercel.app/",
         objective: "Just to make a website for a Learning Platform."
     },
@@ -74,7 +85,7 @@ const projects = [
         title: "BINIWebsite",
         description: "A fan made website for the Bini Philipine-Pop Group.",
         technologies: ["React", "Typescript", "Tailwind", "CSS", "JavaScript"],
-        image: "../images/project-7.png",
+        image: "/images/project-7.png",
         githubLink: "https://biniwebsite.netlify.app/",
         objective: "Just to make a website for the BINI Philipine-Pop Group."
     },
@@ -82,13 +93,14 @@ const projects = [
         title: "MinstrelMuse",
         description: "A website that is a music player that can search music and videos through a integration of Youtube API.",
         technologies: ["React", "Youtube API", "Tailwind", "CSS", "JavaScript", "Firebase Authentication", "Firebase Storage", "Firebase Firestore"],
-        image: "../images/project-8.png",
+        image: "/images/project-8.png",
         githubLink: "https://minstrelmuse.vercel.app/",
         objective: "Just to make a website for a Music Player."
     },
 ];
 
 export function Projects() {
+    const router = useRouter();
     return (
         <section id="projects" className="py-10">
             <div className="space-y-8">
@@ -141,12 +153,23 @@ export function Projects() {
                                     ))}
                                 </div>
 
-                                <p className="text-sm text-muted-foreground border-l-2 border-primary/50 pl-4 italic">
+                                <p className="text-sm text-muted-foreground border-l-2 border-primary/50 pl-4">
                                     {project.objective}
                                 </p>
                             </CardContent>
 
                             <CardFooter className="p-6 pt-0 flex gap-4 mt-auto">
+                                {!project.isIndustry && (
+                                    // In the Button section for View Project:
+                                    <Button
+                                        variant="default"
+                                        size="sm"
+                                        className="group/btn flex-1"
+                                        onClick={() => router.push(`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`)}
+                                    >
+                                        View Project
+                                    </Button>
+                                )}
                                 <Button
                                     variant="outline"
                                     size="sm"
