@@ -46,7 +46,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${GeistSans.className} antialiased tracking-tighter`}>
-        {children}
+        <div className="smooth-wrapper">
+          <div className="smooth-content">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

@@ -46,7 +46,7 @@ export const projects: Project[] = [
         description: "A computer system for personal finance services, serving both staff and clients.",
         technologies: ["JSP", "CSS", "JavaScript", "Tailwind CSS", "MySQL", "Java (Spring Framework)"],
         image: "/images/project-4.png",
-        githubLink: "https://github.com/CritaxoniaDev/Enomy-Finances",
+        githubLink: "https://github.com/CritaxoniaDev/EnomyFinances",
         objective: "Design and implement a new computer system for Enomy-Finances, including core system processes and software designs for client presentation."
     },
     {
@@ -121,13 +121,28 @@ export function Projects() {
                                     </Badge>
                                 </div>
                             )}
-                            <CardHeader className="p-0">
-                                <div className="overflow-hidden">
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
-                                    />
+                            <CardHeader className="p-6 pt-8 bg-gray-900">
+                                <div className="relative">
+                                    {/* Laptop Top Bar */}
+                                    <div className="absolute -top-6 left-0 right-0 h-6 bg-gray-800 rounded-t-2xl flex items-center px-4">
+                                        <div className="flex gap-2">
+                                            <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                                            <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                                        </div>
+                                    </div>
+
+                                    {/* Project Image Container */}
+                                    <div className="overflow-hidden border-4 border-gray-800 shadow-inner">
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                    </div>
+
+                                    {/* Laptop Bottom */}
+                                    <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-40 h-3 bg-gray-800 rounded-b-xl"></div>
                                 </div>
                             </CardHeader>
 
@@ -146,7 +161,7 @@ export function Projects() {
                                         <Badge
                                             key={techIndex}
                                             variant="secondary"
-                                            className="text-xs bg-gray-800/70 text-gray-100 hover:bg-gray-700 dark:bg-gray-700/50 dark:hover:bg-gray-600/50 transition-all duration-300 font-medium px-2.5 py-0.5 rounded-sm shadow-sm border border-gray-600/10 backdrop-blur-sm transform hover:scale-105"
+                                            className="text-xs bg-black text-white hover:bg-gray-900 dark:bg-gray-700/50 dark:hover:bg-gray-600/50 transition-all duration-300 font-medium px-2.5 py-0.5 rounded-sm shadow-sm border border-gray-600/10 backdrop-blur-sm transform hover:scale-105"
                                         >
                                             {tech}
                                         </Badge>
